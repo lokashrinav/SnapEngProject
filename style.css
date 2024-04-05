@@ -13,10 +13,11 @@ body {
 .title {
     text-align: center;
     margin: 0;
-    font-size: 8em;
-    font-family: "Helvetica";
+    font-size: 3.5em;
+    font-family: "DM Sans", sans-serif;
+    padding-top: 25px;
     font-weight: normal;
-    color: white;
+    color: yellow;
 }
 
 #card-container {
