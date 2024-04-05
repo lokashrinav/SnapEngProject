@@ -26,6 +26,14 @@ body {
     margin: 20px;
 }
 
+.subtitle {
+    text-align: center;
+    font-weight: normal;
+    color: yellow;
+    font-size: 1.75em;
+    font-family: "DM Sans", sans-serif;
+}
+
 .card {
     width: 300px;
     border: 1px solid #ccc;
