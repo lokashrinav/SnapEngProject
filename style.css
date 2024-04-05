@@ -36,17 +36,18 @@ body {
 
 .card {
     width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     margin: 5px;
+    background-color: white;
 }
+
 
 .card-content {
     padding: 20px;
-    font-family: "Verdana";
-    color: #777;
+    font-family: "DM Sans";
+    color: black;
 }
+
 
 
 .card-content h2 {
