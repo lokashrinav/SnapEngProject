@@ -29,10 +29,90 @@ const CURB_POSTER_URL = "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWM
 const EAST_LOS_HIGH_POSTER_URL = "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
 // This is an array of strings (TV show titles)
-let titles = [
-    "Fresh Prince of Bel Air",
-    "Curb Your Enthusiasm",
-    "East Los High"
+let dinosaurList = [
+    {
+        Name: "Riojasaurus",
+        TimePeriod: "Triassac",
+        Family: "A",
+        Diet: "A",
+    }, 
+    {
+        Name: "Sanajeh",
+        TimePeriod: "Cretaceous"
+
+    }, 
+    {
+        Name: "Sauroposeidon",
+        TimePeriod: "Cretaceous",
+    }, 
+    {
+        Name: "Stegosaurus",
+        TimePeriod: "Jurassic"
+    }, 
+    {
+        Name: "Pterodaustro",
+        TimePeriod: "Cretaceous"
+    }, 
+    {
+        Name: "Ptilodus",
+        TimePeriod: "Cretaceous"
+    }, 
+    {
+        Name: "Qantassaurus",
+        TimePeriod: "Cretaceous"
+    },
+    {
+        Name: "Qianzhousaurus",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Quetzalcoatlus",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Raptorex",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Rhabdodon",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Rhamphorhynchus",
+        TimePeriod: "Jurassic"
+    },  
+    {
+        Name: "Riojasaurus",
+        TimePeriod: "Triassic"
+    }, 
+    {
+        Name: "Sanajeh",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Sauroposeidon",
+        TimePeriod: "Cretaceous"
+    }, 
+    {
+        Name: "Saurornitholestes",
+        TimePeriod: "Triassic"
+    },  
+    {
+        Name: "Sinovenator",
+        TimePeriod: "Cretaceous"
+    }, 
+    {
+        Name: "Spinosaurus",
+        TimePeriod: "Cretaceous"
+    },  
+    {
+        Name: "Stygimoloch",
+        TimePeriod: "Cretaceous"
+    }, 
+    {
+        Name: "Styracosaurus",
+        TimePeriod: "Cretaceous"
+    },
 ];
 // Your final submission should have much more data than this, and 
 // you should use more than just an array of strings to store it all.
@@ -44,8 +124,8 @@ function showCards() {
     cardContainer.innerHTML = "";
     const templateCard = document.querySelector(".card");
     
-    for (let i = 0; i < titles.length; i++) {
-        let title = titles[i];
+    for (let i = 0; i < dinosaurList.length; i++) {
+        let title = dinosaurList[i].Name;
 
         // This part of the code doesn't scale very well! After you add your
         // own data, you'll need to do something totally different here.
