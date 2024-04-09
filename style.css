@@ -2,11 +2,11 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(0, 255, 225);
+    background-color: black;
 }
 
 .main-header {
-    background-color: rgb(0, 255, 225);
+    background-color: black;
     padding-bottom: 10px;
 }
 
@@ -17,7 +17,7 @@ body {
     font-family: "DM Sans", sans-serif;
     padding-top: 25px;
     font-weight: normal;
-    color: blue;
+    color: white;
 }
 
 #card-container {
@@ -30,7 +30,7 @@ body {
 .subtitle {
     text-align: center;
     font-weight: normal;
-    color: blue;
+    color: white;
     font-size: 1.75em;
     font-family: "DM Sans", sans-serif;
 }
@@ -40,6 +40,8 @@ body {
     border-radius: 20px;
     margin: 5px;
     background-color: white;
+    border: 2px solid gray;
+    margin-right: 30px;
 }
 
 
@@ -62,27 +64,27 @@ body {
 .footer {
     display: flex;
     justify-content: center;
-    background-color:  rgb(0, 255, 225);
+    background-color:  black;
     padding: 10px;
 }
 
 button {
     text-align: center;
-    background-color: cyan;
+    background-color: black;
     border: none;
     font-family: "DM Sans", sans-serif;
     padding-left: 15px;
     padding-right: 15px;
     height: 40px;
-    color: blue;
+    color: white;
     font-size: 22px;
     cursor: pointer;
     margin: 5px;
-    border: 1px solid blue;
+    border: 1px solid white;
 }
 
 
 button:hover {
-    background-color: blue;
-    color: cyan;
+    background-color: white;
+    color: black;
 }

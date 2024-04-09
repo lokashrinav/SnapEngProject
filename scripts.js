@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", showCards);
 
 function quoteAlert() {
     console.log("Button Clicked!")
-    alert("I guess I can kiss heaven goodbye, because it got to be a sin to look this good!");
+    alert("Roar!");
 }
 
 function removeLastCard() {
