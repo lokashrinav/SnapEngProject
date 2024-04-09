@@ -33,85 +33,86 @@ let dinosaurList = [
     {
         Name: "Riojasaurus",
         TimePeriod: "Triassac",
-        Family: "A",
-        Diet: "A",
-    }, 
-    {
-        Name: "Sanajeh",
-        TimePeriod: "Cretaceous"
-
+        URL: "http://images.dinosaurpictures.org/Riojasaurus_sketch1_1535.jpg",
+        Family: "Sauropodomorph",
+        Diet: "Herbivore"
     }, 
     {
         Name: "Sauroposeidon",
         TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Sauroposeidon4_d2cf.jpg",
+        Family: "Sauropod",
+        Diet: "Herbivore"
     }, 
     {
         Name: "Stegosaurus",
-        TimePeriod: "Jurassic"
-    }, 
-    {
-        Name: "Pterodaustro",
-        TimePeriod: "Cretaceous"
-    }, 
-    {
-        Name: "Ptilodus",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/stegosaurus_5bf6.jpg",
+        Family: "Stegosauridae",
+        Diet: "Herbivore",
     }, 
     {
         Name: "Qantassaurus",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Qantassaurus-home.alphalink_8929.jpg",
+        Family: "Hypsilophodontidae",
+        Diet: "Herbivore",
     },
     {
         Name: "Qianzhousaurus",
-        TimePeriod: "Cretaceous"
-    },  
-    {
-        Name: "Quetzalcoatlus",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous", 
+        URL: "http://images.dinosaurpictures.org/image_1907_1e-Qianzhousaurus-sinensis_bd20.jpg",
+        Family: "Tyrannosauridae",
+        Diet: "Carnivore"
     },  
     {
         Name: "Raptorex",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/raptorex_color1a_web_b864.jpg",
+        Family: "Tyrannosauridae",
+        Diet: "Carnivore"
     },  
     {
         Name: "Rhabdodon",
-        TimePeriod: "Cretaceous"
-    },  
-    {
-        Name: "Rhamphorhynchus",
-        TimePeriod: "Jurassic"
-    },  
-    {
-        Name: "Riojasaurus",
-        TimePeriod: "Triassic"
-    }, 
-    {
-        Name: "Sanajeh",
-        TimePeriod: "Cretaceous"
-    },  
-    {
-        Name: "Sauroposeidon",
-        TimePeriod: "Cretaceous"
-    }, 
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Rhabdodon-hyrotrioskjan_436c.jpg",
+        Family: "Rhabdodontidae",
+        Diet: "Herbivore"
+    },   
     {
         Name: "Saurornitholestes",
-        TimePeriod: "Triassic"
+        TimePeriod: "Triassic",
+        URL: "http://images.dinosaurpictures.org/Saurornitholestes_d219.jpg",
+        Family: "Dromaeosauridae",
+        Diet: "Carnivore"
     },  
     {
         Name: "Sinovenator",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/sinovenator_changii_by_antresoll-d4eql0k_01fb.jpg",
+        Family: "Dromaeosauridae",
+        Diet: "Carnivore",
     }, 
     {
         Name: "Spinosaurus",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/spinosaurus_1_118f.jpg",
+        Family: "Spinosauridae",
+        Diet: "Carnivore",
     },  
     {
         Name: "Stygimoloch",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Stygimoloch3_812e.jpg",
+        Family: "Pachycephalosauridae",
+        Diet: "Herbivore",
     }, 
     {
         Name: "Styracosaurus",
-        TimePeriod: "Cretaceous"
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/2000103-styracosaurus-010_8926.jpg",
+        Family: "Ceratopsidae",
+        Diet: "Herbivore",
     },
 ];
 // Your final submission should have much more data than this, and 
@@ -129,14 +130,7 @@ function showCards() {
 
         // This part of the code doesn't scale very well! After you add your
         // own data, you'll need to do something totally different here.
-        let imageURL = "";
-        if (i == 0) {
-            imageURL = FRESH_PRINCE_URL;
-        } else if (i == 1) {
-            imageURL = CURB_POSTER_URL;
-        } else if (i == 2) {
-            imageURL = EAST_LOS_HIGH_POSTER_URL;
-        }
+        let imageURL = dinosaurList[i].URL;
 
         const nextCard = templateCard.cloneNode(true); // Copy the template card
         editCardContent(nextCard, title, imageURL); // Edit title and image

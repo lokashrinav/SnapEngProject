@@ -58,7 +58,18 @@ body {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: auto;   
+}
+
+img {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+}
+
+.img-container {
+    height: 200px;
 }
 
 .footer {
