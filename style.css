@@ -222,7 +222,7 @@ img {
     justify-self: center;
 }
 
-.p{
+.font-change{
     width: 206px;
     height: 20px;
     display: flex;
@@ -247,12 +247,12 @@ img {
     border: solid 1px black;
 }
 
-.B-name{
+.D-name{
     grid-column: 1/2;
     grid-row: 1/2;
 }
 
-.A-name{
+.period{
     grid-column: 1/2;
     grid-row: 2/3;
 }
