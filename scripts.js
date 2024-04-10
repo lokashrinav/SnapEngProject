@@ -190,10 +190,102 @@ let dinosaurList = [
         Diet: "Herbivore",
     },
 ];
-// Your final submission should have much more data than this, and 
-// you should use more than just an array of strings to store it all.
+
+let originalOrder = [...dinosaurList];
+
+function handleSortChange(sortOption) {
+    switch (sortOption) {
+        case "original":
+            original();
+            break;
+        case "alphabetical":
+            alphabeticalSort();
+            break;
+        case "timeperiod":
+            timePeriodSort();
+            break;
+        case "family":
+            familySort();
+            break;
+        case "diet":
+            dietSort();
+            break;
+        default:
+            break;
+    }
+}
+
+function original() {
+    dinosaurList = [...originalOrder];
+    showCards();
+}
+
+function alphabeticalSort() {
+    dinosaurList.sort((a, b) => a.Name.localeCompare(b.Name)) 
+    showCards();
+}
+
+function timePeriodSort() {
+    dinosaurList.sort((a, b) => a.TimePeriod.localeCompare(b.TimePeriod))
+    showCards();
+
+}
+
+function familySort() {
+    dinosaurList.sort((a, b) => a.Family.localeCompare(b.Family))
+    showCards();
+}
+
+function dietSort() {
+    dinosaurList.sort((a, b) => a.Diet.localeCompare(b.Diet))
+    showCards();
+}
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".search");
+    const searchBar = document.querySelector(".search-input"); // Selecting the search bar
+        form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        const searchTerm = document.getElementsByClassName("search-input")[0].value.trim().toLowerCase();
+        searchDinosaurs(searchTerm);
+
+         // Create a "Go Back" button
+         const goBackButton = document.createElement("button");
+         goBackButton.textContent = "Go Back";
+         goBackButton.classList.add("go-back");
+         goBackButton.addEventListener("click", function() {
+             // Clear the search input field
+             searchBar.innerHTML = "";
+ 
+             // Show all cards
+             showCards();
+ 
+             // Remove the "Go Back" button
+             goBackButton.remove();
+         });
+ 
+         // Insert the "Go Back" button next to the search bar
+         searchBar.insertAdjacentElement("beforebegin", goBackButton);
+    });
+});
+
+function searchDinosaurs(searchTerm) {
+    const cardContainer = document.getElementById("card-container");
+    const cards = cardContainer.getElementsByClassName("card");
+
+    for (let card of cards) {
+        const title = card.querySelector("h2").textContent.toLowerCase();
+
+        if (title.includes(searchTerm)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    }
+}
 // This function adds cards the page to display the data in the array
 function showCards() {
     const cardContainer = document.getElementById("card-container");
@@ -203,17 +295,21 @@ function showCards() {
     for (let i = 0; i < dinosaurList.length; i++) {
         let title = dinosaurList[i].Name;
 
-        // This part of the code doesn't scale very well! After you add your
-        // own data, you'll need to do something totally different here.
         let imageURL = dinosaurList[i].URL;
 
+        let bulletPoints = [
+            "Diet: " + dinosaurList[i].Diet,
+            "Time Period: " + dinosaurList[i].TimePeriod,
+            "family: " + dinosaurList[i].Family
+        ];
+
         const nextCard = templateCard.cloneNode(true); // Copy the template card
-        editCardContent(nextCard, title, imageURL); // Edit title and image
+        editCardContent(nextCard, title, imageURL, bulletPoints); // Edit title and image
         cardContainer.appendChild(nextCard); // Add new card to the container
     }
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, newTitle, newImageURL, bulletPoints) {
     card.style.display = "block";
 
     const cardHeader = card.querySelector("h2");
@@ -222,6 +318,15 @@ function editCardContent(card, newTitle, newImageURL) {
     const cardImage = card.querySelector("img");
     cardImage.src = newImageURL;
     cardImage.alt = newTitle + " Poster";
+
+    const bulletList = card.querySelector("ul");
+    bulletList.innerHTML = ""; // Clear existing bullet points
+
+    bulletPoints.forEach(point => {
+        const bulletItem = document.createElement("li");
+        bulletItem.textContent = point;
+        bulletList.appendChild(bulletItem);
+    });
 
     // You can use console.log to help you debug!
     // View the output by right clicking on your website,
@@ -234,7 +339,7 @@ document.addEventListener("DOMContentLoaded", showCards);
 
 function quoteAlert() {
     console.log("Button Clicked!")
-    alert("Roar!");
+    alert("Meow");
 }
 
 function removeLastCard() {

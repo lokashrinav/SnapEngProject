@@ -22,16 +22,49 @@
         <h1 class="title">Dinosaur Catalog</h1>
         <div class = "subtitle">Explore the Coolest Dinosaurs Throughout Earth's History</div>
     </header>
-
+    <div class="search">
+        <form action="#" class="center" class="search-form">
+            <input type="text" placeholder=" Search Dinosaurs..." name="search" class="search-input">
+            <button class="search-button"> Enter
+            </button>
+        </form>
+    </div>
+    <div class="operations">
+        <div class="middle">
+            <label for="language" class="margin">Sort by: </label>
+            <select name="sorting" id="sorting" onchange="handleSortChange(this.value);">
+                <option value="original" onclick="original();" selected>Original Order</option>
+                <option value="alphabetical" onclick="alphabeticalSort();"> Alphabetical </option>
+                <option value="timeperiod" onclick="timePeriodSort();">Time Period</option>
+                <option value="family" onclick="familySort();">Family</option>
+                <option value="diet" onclick="dietSort();">Diet</option>
+              </select>
+        </div>
+        
+    </div>
+    <div class="button-area">
+        <button onclick="removeLastCard();">
+            Remove Last Card!
+        </button>
+        <button onclick="removeLastCard();">
+            Add Card!
+        </button>
+        <button onclick="removeLastCard();">
+            Remove Specific Card!
+        </button>
+        <button onclick="quoteAlert();">
+            Get A Dinosaur Roar!
+        </button>
+    </div>
     <!-- Container that serves as the middle body and contains all the cards available -->
     <div id="card-container">
         
     </div>
     <div class="card" style="display: none;">
         <div class="card-content">
-            <h2>TV Show Title</h2>
+            <h2>Dinosaur Name</h2>
             <div class = "img-container">
-                <img src="" alt="TV Show Poster">
+                <img src="" alt="Dinosaur Image">
             </div>
             <ul>
                 <li>Bullet Point 1</li>
@@ -42,21 +75,7 @@
     </div>
     <!-- Bottom of the page, includes two buttons, the Quote and Remove buttons -->
     <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Dinosaur Roar!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-        <button onclick="removeLastCard();">
-            No Filter
-        </button>
-        <button onclick="removeLastCard();">
-            Filter by Time Period
-        </button>
-        <button onclick="removeLastCard();">
-            
-        </button>
+
     </div>
 </body>
 
