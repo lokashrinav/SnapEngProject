@@ -1,42 +1,117 @@
 /**
  * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- * 
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your 
- *    browser and make sure you can see that change. 
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- * 
- */
+*/
 
+// This is an array of objects (Dinosaur names)
 
-const FRESH_PRINCE_URL = "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL = "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL = "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+// All of my data is credited to "https://dinosaurpictures.org/"
 
-// This is an array of strings (TV show titles)
 let dinosaurList = [
     {
-        Name: "Riojasaurus",
-        TimePeriod: "Triassac",
-        URL: "http://images.dinosaurpictures.org/Riojasaurus_sketch1_1535.jpg",
-        Family: "Sauropodomorph",
+        Name: "Tyrannosaurus Rex",
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/dinosaurs-tyrannosaurus_00336745_13a8.jpg",
+        Family: "Tyrannosauridae",
+        Diet: "Carnivore"
+    }, 
+    {
+        Name: "Triceratops",
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Triceratops_d6c1.jpg",
+        Family: "Ceratopsidae",
         Diet: "Herbivore"
     }, 
+    {
+        Name: "Velociraptor",
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/Velociraptor-dinosaurs-23564955-817-734_5c51.jpg",
+        Family: "Dromaeosauridae",
+        Diet: "Carnivore"
+    },    
+    {
+        Name: "Brachiosaurus",
+        TimePeriod: "Late Jurassic",
+        URL: "http://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg",
+        Family: "Brachiosauridae",
+        Diet: "Herbivore"
+    },    
+    {
+        Name: "Allosaurus",
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/Allosaurus2_e7af.jpg",
+        Family: "Allosauridae",
+        Diet: "Carnivore"
+    },    
+    {
+        Name: "Apatosaurus",
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/apatosaurus-9158_9d10.jpg",
+        Family: "Diplodocidae",
+        Diet: "Herbivore"
+    },    
+    {
+        Name: "Dilophosaurus",
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/127544_Dilophosaurus_Pose_2_000.jpg0c59dae3-f8e3-48a4-a5d4-da8ff572cef3Original_eb0a.jpg",
+        Family: "Dilophosauridae",
+        Diet: "Carnivore"
+    },    
+    {
+        Name: "Giganotosaurus",
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/giganotosaurus_by_Gonzalezaurus_d03d.jpg",
+        Family: "Carcharodontosauridae",
+        Diet: "Carnivore"
+    },    
+    {
+        Name: "Ankylosaurus",
+        TimePeriod: "Cretaceous",
+        URL: "http://images.dinosaurpictures.org/ankylosaurus_7663.jpg",
+        Family: "Ankylosauridae",
+        Diet: "Herbivore"
+    },
+    {
+        Name: "Carnotaurus",
+        TimePeriod: "Late Cretaceous",
+        URL: "http://images.dinosaurpictures.org/carnotaurus_355f.jpg",
+        Family: "Abelisauridae",
+        Diet: "Carnivore"
+    },
+    {
+        Name: "Diplodocus",
+        TimePeriod: "Jurassic",
+        URL: "http://images.dinosaurpictures.org/diplodocus-1_7fa2.jpg",
+        Family: "Diplodocidae",
+        Diet: "Herbivore"
+    },
+    {
+        Name: "Iguanodon",
+        TimePeriod: "Early Cretaceous",
+        URL: "http://images.dinosaurpictures.org/iguanodon-1_e1e9.jpg",
+        Family: "Iguanodontidae",
+        Diet: "Herbivore"
+    },
+    {
+        Name: "Pteranodon",
+        TimePeriod: "Late Cretaceous",
+        URL: "http://images.dinosaurpictures.org/ExPteranodonLongiceps1_179b.jpg",
+        Family: "Pterosauria",
+        Diet: "Carnivore"
+    },
+    {
+        Name: "Troodon",
+        TimePeriod: "Late Cretaceous",
+        URL: "http://images.dinosaurpictures.org/troodon_by_haghani-d6re9g7_62af.jpg",
+        Family: "Troodontidae",
+        Diet: "Carnivore"
+    },
+    {
+        Name: "Utahraptor",
+        TimePeriod: "Early Cretaceous",
+        URL: "http://images.dinosaurpictures.org/utahraptor_ostrommaysorum_by_teratophoneus-d4oq7xm_518f.jpg",
+        Family: "Dromaeosauridae",
+        Diet: "Carnivore"
+    },    
     {
         Name: "Sauroposeidon",
         TimePeriod: "Cretaceous",
@@ -163,6 +238,6 @@ function quoteAlert() {
 }
 
 function removeLastCard() {
-    titles.pop(); // Remove last item in titles array
+    dinosaurList.pop(); // Remove last item in titles array
     showCards(); // Call showCards again to refresh
 }
