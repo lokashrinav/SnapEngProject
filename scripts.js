@@ -189,9 +189,39 @@ let dinosaurList = [
         Family: "Ceratopsidae",
         Diet: "Herbivore",
     },
+    {
+        Name: "Cryolophosaurus",
+        TimePeriod: "Early Jurassic",
+        URL: "http://images.dinosaurpictures.org/Cryolophosaurus4_ba17.jpg",
+        Family: "Cryolophosauridae",
+        Diet: "Carnivore"
+    },
+
 ];
 
 let originalOrder = [...dinosaurList];
+
+document.addEventListener('click', handleDocumentClick);
+
+function handleDocumentClick(event) {
+    let pop = document.querySelector('.popup-open');
+    if (pop != NaN) {
+        if (!pop.contains(event.target) && event.target !== document.querySelector('.add')) {
+            pop.classList.remove("popup-open");
+            pop.classList.add("popup");
+        }
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let pop = document.querySelector('.popup');
+
+    document.querySelector('.add').addEventListener('click', function (event) {
+        pop.classList.remove("popup");
+        pop.classList.add("popup-open");
+    });
+});
 
 function handleSortChange(sortOption) {
     switch (sortOption) {
@@ -245,29 +275,24 @@ function dietSort() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector(".search");
-    const searchBar = document.querySelector(".search-input"); // Selecting the search bar
+    const searchBar = document.querySelector(".search-input"); 
         form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
+        event.preventDefault(); 
 
         const searchTerm = document.getElementsByClassName("search-input")[0].value.trim().toLowerCase();
         searchDinosaurs(searchTerm);
 
-         // Create a "Go Back" button
          const goBackButton = document.createElement("button");
          goBackButton.textContent = "Go Back";
          goBackButton.classList.add("go-back");
          goBackButton.addEventListener("click", function() {
-             // Clear the search input field
              searchBar.innerHTML = "";
  
-             // Show all cards
              showCards();
  
-             // Remove the "Go Back" button
              goBackButton.remove();
          });
  
-         // Insert the "Go Back" button next to the search bar
          searchBar.insertAdjacentElement("beforebegin", goBackButton);
     });
 });
@@ -286,6 +311,7 @@ function searchDinosaurs(searchTerm) {
         }
     }
 }
+
 // This function adds cards the page to display the data in the array
 function showCards() {
     const cardContainer = document.getElementById("card-container");
@@ -320,8 +346,8 @@ function editCardContent(card, newTitle, newImageURL, bulletPoints) {
     cardImage.alt = newTitle + " Poster";
 
     const bulletList = card.querySelector("ul");
-    bulletList.innerHTML = ""; // Clear existing bullet points
-
+    bulletList.innerHTML = "";
+    
     bulletPoints.forEach(point => {
         const bulletItem = document.createElement("li");
         bulletItem.textContent = point;
@@ -345,4 +371,33 @@ function quoteAlert() {
 function removeLastCard() {
     dinosaurList.pop(); // Remove last item in titles array
     showCards(); // Call showCards again to refresh
+}
+
+function addCards() {
+    let pop = document.querySelector('.popup-open');
+
+    pop.classList.remove("popup-open");
+    pop.classList.add("popup");
+
+    let dinosaurName = document.getElementById("id1").value;
+
+    let timePeriod = document.getElementById("id2").value;
+
+    let diet = document.getElementById("id3").value;
+
+    let url = document.getElementById("id4").value;
+
+    let family = document.getElementById("id5").value;
+
+
+    dinosaurList.unshift({
+        Name: dinosaurName,
+        TimePeriod: timePeriod,
+        URL: url,
+        Family: family,
+        Diet: diet,
+    })
+
+    showCards();
+
 }

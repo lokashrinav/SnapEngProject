@@ -17,6 +17,39 @@
 </head>
 
 <body>
+    <form class="popup">
+        <div class="name B-name">
+            <div class="p"><div class="s">Dinosaur Name</div></div>
+            <div class="form-wrapper">
+                <input id = "id1" type="text" class="add-input"  required>
+            </div>
+        </div>
+        <div class="name A-name">
+            <div class="p"><div class="s">Time Period</div></div>
+            <div class="form-wrapper">
+                <input id = "id2" type="text" class="add-input" required>
+            </div>
+        </div>
+        <div class="name PN">
+            <div class="p"><div class="s">Diet</div></div>
+            <div class="form-wrapper">
+                <input id = "id3" type="text" class="add-input"  required>
+            </div>
+        </div>
+        <div class="name url">
+            <div class="p"><div class="s">Image URL</div></div>
+            <div class="form-wrapper">
+                <input id = "id4" type="text" class="add-input"  required>
+            </div>
+        </div>
+        <div class="name family">
+            <div class="p"><div class="s">Family</div></div>
+            <div class="form-wrapper">
+                <input id = "id5" type="text" class="add-input"  required>
+            </div>
+        </div>
+        <div class="enter1" onclick="addCards()"><button type="button" class="enter">Enter</div>
+    </form>
     <!-- Title bar of Home Page -->
     <header class="main-header">
         <h1 class="title">Dinosaur Catalog</h1>
@@ -46,11 +79,8 @@
         <button onclick="removeLastCard();">
             Remove Last Card!
         </button>
-        <button onclick="removeLastCard();">
+        <button class="add">
             Add Card!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove Specific Card!
         </button>
         <button onclick="quoteAlert();">
             Get A Dinosaur Roar!
@@ -73,10 +103,7 @@
             </ul>
         </div>
     </div>
-    <!-- Bottom of the page, includes two buttons, the Quote and Remove buttons -->
-    <div class="footer">
 
-    </div>
 </body>
 
 </html>
